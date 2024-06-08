@@ -1,0 +1,12 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\App\Http\Context">
+        <plugin name="customizeVaryString"
+                type="Mike\Cache\Plugin\Http\Context\CustomerContextPlugin" sortOrder="10" disabled="false"/>
+    </type>
+    <type name="Magento\Framework\App\FrontController">
+        <plugin name="mike-cache-app-add-customer-session-to-registry"
+                type="Mike\Cache\Plugin\App\FrontControllerPlugin" sortOrder="10" disabled="false"/>
+    </type>
+</config>
